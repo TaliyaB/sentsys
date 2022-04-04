@@ -160,7 +160,7 @@ def upload(request):
             'uploaded_file_url': uploaded_file_url
         })
         #out = run([sys.executable,'runall.py'], shell=False, stout=PIPE)
-    return render(request, 'up.html')
+    #return render(request, 'up.html')
 
     #return HttpResponseRedirect(request.path)
     #template = loader.get_template('up.html')
