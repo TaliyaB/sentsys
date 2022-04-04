@@ -8,7 +8,7 @@ from subprocess import run, PIPE
 from django.http import HttpResponseRedirect
 import requests
 import sys
-sys.path.append(os.path.join(os.getcwd(), 'sentiments/sentiments'))
+
 
 def index(request):
     r = requests.get('https://httpbin.org/status/418')
@@ -16,6 +16,7 @@ def index(request):
     return HttpResponse('<pre>' + r.text + '</pre>')
 
 def primary(path):
+    sys.path.append(os.path.join(os.getcwd(), 'sentiments/sentiments'))
     """
     DATA EXTRACTOR CODE
     """
