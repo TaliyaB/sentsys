@@ -17,7 +17,8 @@ def index(request):
 
 def primary(path):
     import os
-    sys.path.append(os.path.join(os.getcwd(), 'sentiments/sentiments'))
+    #sys.path.append(os.path.join(os.getcwd(), 'sentiments/sentiments'))
+    sys.path.insert(0, os.path.join(os.getcwd(), 'sentiments/sentiments'))
     """
     DATA EXTRACTOR CODE
     """
