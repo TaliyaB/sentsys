@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 from wordcloud import WordCloud, STOPWORDS
-from sentiments import MachineLearning
+#from sentiments import MachineLearning
 
 class Visualizer():
     def __init__(self):
