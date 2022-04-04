@@ -16,6 +16,7 @@ def index(request):
     return HttpResponse('<pre>' + r.text + '</pre>')
 
 def primary(path):
+    import os
     sys.path.append(os.path.join(os.getcwd(), 'sentiments/sentiments'))
     """
     DATA EXTRACTOR CODE
