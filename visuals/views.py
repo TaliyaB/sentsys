@@ -19,7 +19,7 @@ def primary(path):
     """
     DATA EXTRACTOR CODE
     """
-    from sentiments.sentiments import TextProcessor, Visualizer, MachineLearning
+    from sentiments import TextProcessor, Visualizer, MachineLearning
     import os
     import pandas as pd
     #path = "C:\\Users\\user\\Documents\\Freelance\\sentiments\\sample_data\\Student' s Perception towards Online Learning Questionnaire.csv (1)\\Student' s Perception towards Online Learning Questionnaire.csv"
