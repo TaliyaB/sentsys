@@ -6,7 +6,8 @@ from subprocess import run, PIPE
 from django.http import HttpResponseRedirect
 import requests
 import sys
-sys.path.insert(0, 'sentiments/sentiments')
+sys.path.append('sentiments/sentiments')
+
 def index(request):
     r = requests.get('https://httpbin.org/status/418')
     print(r.text)
