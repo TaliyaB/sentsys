@@ -41,7 +41,7 @@ def primary(path):
     print('Created {} size {}'.format(fname2, os.path.getsize(fname2)))
 
     print(data.df_final_data_for_sentiment_analysis)
-    machine_learning_processes = sentiments.MachineLearning.MachineLearning(
+    machine_learning_processes = MachineLearning.MachineLearning(
         df_for_sentiment_analysis=data.df_final_data_for_sentiment_analysis,
         tokens_per_question=data.list_tokens_per_question,
         respondents_by_course=data.dict_respondents_course,
@@ -51,7 +51,7 @@ def primary(path):
     machine_learning_processes.sentiment_analysis()
 
     # adj
-    top_n_adj = sentiments.Visualizer.Visualizer()
+    top_n_adj = Visualizer.Visualizer()
     for i in range(len(machine_learning_processes.df_top_n_adjectives)):
         html1 = machine_learning_processes.df_top_n_adjectives[i].to_html()
         fname1 = 'visuals/templates/adj{}.html'.format(i)
@@ -66,7 +66,7 @@ def primary(path):
                                            output_file="visuals/templates/top_n_Adjective.png")
 
     # noun
-    top_n_noun = sentiments.Visualizer.Visualizer()
+    top_n_noun = Visualizer.Visualizer()
     for i in range(len(machine_learning_processes.df_top_n_nouns)):
         html = machine_learning_processes.df_top_n_nouns[i].to_html()
         fname = 'visuals/templates/nouns{}.html'.format(i)
@@ -81,21 +81,21 @@ def primary(path):
                                             output_file="visuals/templates/static/top_n_Noun.png")
 
     # block
-    respondents_per_block = sentiments.Visualizer.Visualizer()
+    respondents_per_block = Visualizer.Visualizer()
     respondents_per_block.pie(x_data=data.dict_respondents_block.keys(),
                               y_data=data.dict_respondents_block.values(),
                               title="Distribution of Respondents per Course",
                               output_filename="visuals/templates/static/respondents_per_block.png")
 
     # course
-    respondents_per_course = sentiments.Visualizer.Visualizer()
+    respondents_per_course = Visualizer.Visualizer()
     respondents_per_course.pie(x_data=data.dict_respondents_course.keys(),
                                y_data=data.dict_respondents_course.values(),
                                title="Distribution of Respondents per Course",
                                output_filename="visuals/templates/static/respondents_per_course.png")
 
     # sentiment
-    sentiment_analysis_frequency = sentiments.Visualizer.Visualizer()
+    sentiment_analysis_frequency = Visualizer.Visualizer()
     sentiment_analysis_frequency.multiple_bar_for_sentiment_analysis(
         y0_data=machine_learning_processes.list_freq_pos_sentiments_per_question,
         y1_data=machine_learning_processes.list_freq_neg_sentiments_per_question,
@@ -104,12 +104,12 @@ def primary(path):
 
     # wordcloud
 
-    positive_wordCloud = sentiments.Visualizer.Visualizer()
+    positive_wordCloud = Visualizer.Visualizer()
     positive_wordCloud.wordCloud(text=machine_learning_processes.df_positive_predicted_sentiments['Text'].tolist(),
                                  color='white', title='Positive WordCloud',
                                  output_file='visuals/templates/static/positive_wordcloud.png')
 
-    negative_wordCloud = sentiments.Visualizer.Visualizer()
+    negative_wordCloud = Visualizer.Visualizer()
     negative_wordCloud.wordCloud(text=machine_learning_processes.df_negative_predicted_sentiments['Text'].tolist(),
                                  color='black', title='Negative WordCloud',
                                  output_file='visuals/templates/static/negative_wordcloud.png')
