@@ -23,13 +23,14 @@ def primary(path):
     """
     import sentiments
     #from sentiments import TextProcessor, Visualizer, MachineLearning
+    import TextProcessor, Visualizer, MachineLearning
     import os
     import pandas as pd
     #path = "C:\\Users\\user\\Documents\\Freelance\\sentiments\\sample_data\\Student' s Perception towards Online Learning Questionnaire.csv (1)\\Student' s Perception towards Online Learning Questionnaire.csv"
     path = os.path.join(os.getcwd(),'media', path)
     # create data object
     #data = sentiments.TextProcessor.TextProcessor()
-    data = sentiments.TextProcessor()
+    data = TextProcessor.TextProcessor()
     data.parser(path=path)
 
     fname2 = 'visuals/templates/preprocessed.html'
