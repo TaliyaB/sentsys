@@ -1,2 +1,1 @@
-web: gunicorn sentsys.wsgi
-web: gunicorn sentsys:app --timeout 40
+web: gunicorn sentsys.wsgig
