@@ -9,7 +9,7 @@ import nltk
 import spacy
 spacy.cli.download("en_core_web_md")
 import en_core_web_md
-from sentiments import Visualizer
+#from sentiments import Visualizer
 from nltk.sentiment import SentimentIntensityAnalyzer
 import collections
 from statistics import mean
