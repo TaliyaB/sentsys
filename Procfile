@@ -1,1 +1,1 @@
-web: gunicorn sentsys.wsgig
+web: gunicorn sentsys.wsgi
