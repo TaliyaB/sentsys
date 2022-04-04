@@ -21,6 +21,7 @@ def primary(path):
     """
     DATA EXTRACTOR CODE
     """
+    import sentiments
     from sentiments import TextProcessor, Visualizer, MachineLearning
     import os
     import pandas as pd
