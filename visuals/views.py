@@ -1,3 +1,5 @@
+import os.path
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
@@ -6,7 +8,7 @@ from subprocess import run, PIPE
 from django.http import HttpResponseRedirect
 import requests
 import sys
-sys.path.append('sentiments/sentiments')
+sys.path.append(os.path.join(os.getcwd(), 'sentiments/sentiments'))
 
 def index(request):
     r = requests.get('https://httpbin.org/status/418')
